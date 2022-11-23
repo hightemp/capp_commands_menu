@@ -1,0 +1,13 @@
+---
+servers:
+  minicomp-01:
+    commands:
+      -
+        - "systemd - openvpn status"
+        - systemctl status openvpn@client
+    scripts:
+      -
+        - "arp scan"
+        - |
+          #!/bin/bash
+          arp-scan -l
